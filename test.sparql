@@ -1,0 +1,5 @@
+#+ endpoint: http://145.100.57.92:7200/sparql
+
+select * where { 
+	?s ?p ?o .
+} limit 100 
