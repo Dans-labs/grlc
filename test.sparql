@@ -1,4 +1,4 @@
-#+ endpoint: http://145.100.57.92:7200/sparql
+#+ endpoint: http://145.100.57.92:7200/repositories/DANS-Social-Science-Data
 
 select * where { 
 	?s ?p ?o .
