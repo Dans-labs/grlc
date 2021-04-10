@@ -1,4 +1,4 @@
-#+ endpoint: http://portal.odissei.nl:7200/repositories/DANS-Social-Science-Data 
+#+ endpoint: http://portal.odissei.nl:7200/repositories/jaccotest
 
 select * where { 
 	?s ?p ?o .
