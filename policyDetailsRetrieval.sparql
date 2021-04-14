@@ -1,4 +1,4 @@
-#+ endpoint: http://portal.odissei.nl:7200/repositories/margheritatest
+#+ endpoint: http://portal.odissei.nl:7200/repositories/ODISSEI-DEMO
 
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
