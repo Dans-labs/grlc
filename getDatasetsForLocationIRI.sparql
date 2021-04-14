@@ -1,0 +1,7 @@
+#+ endpoint: http://portal.odissei.nl:7200/repositories/ODISSEI-DEMO
+
+select DISTINCT ?datasetIRI ?datasetPublisher
+where {
+    ?datasetIRI dct:spatial ?_location_iri .
+    ?datasetIRI dct:publisher ?datasetPublisher
+}
