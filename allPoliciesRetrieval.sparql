@@ -2,6 +2,8 @@
 
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 
-select DISTINCT ?_doi_iri ?policy where { 
-    ?_doi_iri odrl:hasPolicy ?policy .
+select ?doi ?policy 
+where { 
+    ?doi odrl:hasPolicy ?policy .
+    FILTER (?doi = ?_doi_iri)
 } 
