@@ -2,7 +2,7 @@
 
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 
-select ?_doi ?policy 
+select ?policy 
 where { 
     ?_doi_iri odrl:hasPolicy ?policy .
 } 
