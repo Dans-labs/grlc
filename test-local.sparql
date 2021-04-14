@@ -1,0 +1,5 @@
+#+ endpoint: http://localhost:7200/repositories/demo
+
+select * where { 
+	?s ?p ?o .
+} limit 100
