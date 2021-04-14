@@ -8,5 +8,5 @@ where {
     ?datasetIRI dct:spatial ?_location_iri .
     {?datasetIRI dct:publisher ?datasetPublisher}
     UNION
-    {?datasetIRI ns1_CBSdcatDuplicate:publisher ?datasetPublisher
+    {?datasetIRI ns1_CBSdcatDuplicate:publisher ?datasetPublisher}
 }
