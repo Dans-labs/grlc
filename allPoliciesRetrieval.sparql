@@ -1,0 +1,7 @@
+#+ endpoint: http://portal.odissei.nl:7200/repositories/margheritatest
+
+PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+
+select DISTINCT ?doi ?policy where { 
+    ?doi odrl:hasPolicy ?policy .
+} 

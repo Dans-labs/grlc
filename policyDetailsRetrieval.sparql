@@ -1,0 +1,32 @@
+#+ endpoint: http://portal.odissei.nl:7200/repositories/margheritatest
+
+PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX opl: <http://www.w3id.org/odissei/ns/terms_of_use_representation/>
+
+select ?permissions ?permissionDetails ?prohibitions ?prohibitionDetails ?obligations ?obligationDetails ?attributionFormat 
+where {
+    ?s odrl:hasPolicy ?policy .
+    {
+        ?policy odrl:permission ?permissions .
+    		{?permissions skos:definition ?permissionDetails}
+    		UNION
+        	{?permissions rdfs:comment ?permissionDetails}
+    }
+    UNION
+    {
+        ?policy odrl:prohibition ?prohibitions .
+        	{?prohibitions skos:definition ?prohibitionDetails}
+       		UNION
+        	{?prohibitions rdfs:comment ?prohibitionDetails}
+    }
+    UNION
+    {
+        ?policy odrl:obligation ?obligations .
+        	{?obligations opl:hasAttribution ?obligationDetails}
+        	UNION
+        	{?obligations opl:hasAttributionFormat ?attributionFormat}
+    }
+    FILTER (?s = <http://doi.org/10.17026/dans-z34-fjds>) 
+} 

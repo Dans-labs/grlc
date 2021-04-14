@@ -1,0 +1,14 @@
+#+ endpoint: http://portal.odissei.nl:7200/repositories/margheritatest
+
+PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX opl: <http://www.w3id.org/odissei/ns/terms_of_use_representation/>
+
+select DISTINCT ?title ?publisher ?policy where { 
+    ?s dct:title ?title .
+    ?s dct:publisher ?publisher .
+    ?s odrl:hasPolicy ?policy .
+    ?policy odrl:permission ?AcademicUse,
+            ?DerivativeWorks .
+
+} 
