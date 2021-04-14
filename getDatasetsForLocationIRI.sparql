@@ -1,5 +1,7 @@
 #+ endpoint: http://portal.odissei.nl:7200/repositories/ODISSEI-DEMO
 
+PREFIX dct:  <http://purl.org/dc/terms/> 
+
 select DISTINCT ?datasetIRI ?datasetPublisher
 where {
     ?datasetIRI dct:spatial ?_location_iri .
