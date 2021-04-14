@@ -7,7 +7,7 @@ PREFIX opl: <http://www.w3id.org/odissei/ns/terms_of_use_representation/>
 
 select ?permissions ?permissionDetails ?prohibitions ?prohibitionDetails ?obligations ?obligationDetails ?attributionFormat 
 where {
-    ?s odrl:hasPolicy ?policy .
+    ?_doi_iri odrl:hasPolicy ?policy .
     {
         ?policy odrl:permission ?permissions .
     		{?permissions skos:definition ?permissionDetails}
@@ -28,5 +28,4 @@ where {
         	UNION
         	{?obligations opl:hasAttributionFormat ?attributionFormat}
     }
-    FILTER (?s = <http://doi.org/10.17026/dans-z34-fjds>) 
 } 
