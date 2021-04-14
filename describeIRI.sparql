@@ -1,0 +1,6 @@
+#+ endpoint: http://portal.odissei.nl:7200/repositories/ODISSEI-DEMO
+
+select DISTINCT *
+WHERE {
+    ?_IRI_iri ?p ?o
+}
