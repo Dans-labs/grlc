@@ -1,9 +1,0 @@
-#+ endpoint: http://portal.odissei.nl:7200/repositories/margheritatest
-
-PREFIX dct: <http://purl.org/dc/terms/>
-PREFIX at: <http://publications.europa.eu/resource/authority/access-right/>
-
-select DISTINCT ?s ?title where { 
-    ?s dct:accessRights at:PUBLIC .
-    ?s dct:title ?title .
-} 

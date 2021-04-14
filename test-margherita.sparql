@@ -1,5 +1,0 @@
-#+ endpoint: http://portal.odissei.nl:7200/repositories/margheritatest
-
-select * where { 
-	?s ?p ?o .
-} limit 100

@@ -5,25 +5,25 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX opl: <http://www.w3id.org/odissei/ns/terms_of_use_representation/>
 
-select ?permissions ?permissionDetails ?prohibitions ?prohibitionDetails ?obligations ?obligationDetails ?attributionFormat 
+select ?policyIRI ?permissions ?permissionDetails ?prohibitions ?prohibitionDetails ?obligations ?obligationDetails ?attributionFormat 
 where {
-    ?_doi_iri odrl:hasPolicy ?policy .
+    ?_doi_iri odrl:hasPolicy ?policyIRI .
     {
-        ?policy odrl:permission ?permissions .
+        ?policyIRI odrl:permission ?permissions .
     		{?permissions skos:definition ?permissionDetails}
     		UNION
         	{?permissions rdfs:comment ?permissionDetails}
     }
     UNION
     {
-        ?policy odrl:prohibition ?prohibitions .
+        ?policyIRI odrl:prohibition ?prohibitions .
         	{?prohibitions skos:definition ?prohibitionDetails}
        		UNION
         	{?prohibitions rdfs:comment ?prohibitionDetails}
     }
     UNION
     {
-        ?policy odrl:obligation ?obligations .
+        ?policyIRI odrl:obligation ?obligations .
         	{?obligations opl:hasAttribution ?obligationDetails}
         	UNION
         	{?obligations opl:hasAttributionFormat ?attributionFormat}
