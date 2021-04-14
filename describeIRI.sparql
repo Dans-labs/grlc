@@ -1,4 +1,6 @@
 #+ endpoint: http://portal.odissei.nl:7200/repositories/ODISSEI-DEMO
+#+ defaults:
+#+   - IRI: http://doi.org/10.17026/dans-z34-fjds
 
 select DISTINCT *
 WHERE {
