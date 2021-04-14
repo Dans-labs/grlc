@@ -1,4 +1,6 @@
 #+ endpoint: http://portal.odissei.nl:7200/repositories/ODISSEI-DEMO
+#+ defaults:
+#+   - doi: http://doi.org/10.17026/dans-z34-fjds
 
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
