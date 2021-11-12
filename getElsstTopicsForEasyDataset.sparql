@@ -10,7 +10,7 @@ PREFIX disco: <http://rdf-vocabulary.ddialliance.org/discovery#>
 
 SELECT 
 
-?elsstConcept
+(group_concat(DISTINCT ?elsstConcept;separator="'<br/>\n\n'") as ?elsstConcepts)
 (group_concat(DISTINCT ?elsstLabel;separator="'\n\n'") as ?elsstLabels)
 WHERE {
     ?_dataset_iri dct:subject ?elsstConcept .
