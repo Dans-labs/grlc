@@ -6,7 +6,7 @@ PREFIX cbs: <http://www.cbs-data.com/>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT ?_dataset_iri 
+SELECT 
 (group_concat(DISTINCT ?keyword;separator="'\n\n'") as ?keywords)
 (group_concat(DISTINCT ?elsstConcept;separator="'\n\n'") as ?elsstConcepts)
 (group_concat(DISTINCT ?elsstLabel;separator="'\n\n'") as ?elsstLabels)
