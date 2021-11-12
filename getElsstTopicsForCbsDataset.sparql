@@ -14,4 +14,4 @@ WHERE {
     ?_dataset_iri  cbs:keyword ?keyword ;
              dct:subject ?elsstConcept .
     ?elsstConcept skos:prefLabel ?elsstLabel 
-} GROUP BY ?_dataset_iri 
+}
