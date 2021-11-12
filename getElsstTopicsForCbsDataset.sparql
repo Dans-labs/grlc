@@ -1,6 +1,6 @@
 #+ endpoint: http://portal.odissei.nl:7200/repositories/margheritatest
 #+ defaults:
-#+   - location: http://www.cbs-data.com/0b01e410800a0eb5
+#+   - dataset: http://www.cbs-data.com/0b01e410800a0eb5
 
 PREFIX cbs: <http://www.cbs-data.com/>
 PREFIX dct: <http://purl.org/dc/terms/>
