@@ -7,11 +7,9 @@ PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT 
-?keyword
-(group_concat(DISTINCT ?elsstConcept;separator="'\n\n'") as ?elsstConcepts)
+?elsstConcept
 (group_concat(DISTINCT ?elsstLabel;separator="'\n\n'") as ?elsstLabels)
 WHERE {
-    ?_dataset_iri  cbs:keyword ?keyword ;
-             dct:subject ?elsstConcept .
+    ?_dataset_iri  dct:subject ?elsstConcept .
     ?elsstConcept skos:prefLabel ?elsstLabel 
-} GROUP BY ?keyword
+} GROUP BY ?elsstConcept
