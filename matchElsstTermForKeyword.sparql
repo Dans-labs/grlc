@@ -12,7 +12,8 @@ SELECT ?iri
   GRAPH <https://thesauri.cessda.eu/elsst/>
   {?iri ?y ?lbl .
     
-    FILTER CONTAINS (?lbl, ?_label_nl)
+  #  FILTER CONTAINS (?lbl, ?_label_nl)
+    FILTER (?lbl = ?_label_nl)
     FILTER (LANG(?lbl) = "nl")
   }
 } LIMIT 10000 
