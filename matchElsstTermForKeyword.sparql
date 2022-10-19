@@ -12,7 +12,7 @@ SELECT ?iri
   GRAPH <https://thesauri.cessda.eu/elsst/>
   {?iri ?y ?lbl .
     
-    FILTER sameTerm(?lbl,?_label_nl) 
+    FILTER sameTerm(lcase(?lbl),lcase(?_label_nl)) 
    
   }
 } LIMIT 1
