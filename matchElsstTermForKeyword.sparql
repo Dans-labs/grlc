@@ -13,6 +13,7 @@ SELECT ?iri
   {?iri ?y ?lbl .
     
     FILTER sameTerm(lcase(?lbl),lcase(?_label_nl)) 
+    FILTER langMatches( lang(?lbl), "NL" ) 
    
   }
 } LIMIT 1
