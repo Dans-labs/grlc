@@ -1,18 +1,18 @@
 #+ endpoint: https://fuseki.dev.odissei.nl/skosmos/sparql
 #+ defaults:
-#+   - LABEL: ONDERWIJS
+#+   - label: ONDERWIJS
 
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?URI ?LABEL
+SELECT ?iri ?_label
 
  WHERE {
   GRAPH <https://thesauri.cessda.eu/elsst/>
-  {?URI ?y ?LABEL .
+  {?iri ?y ?_label .
     
-    FILTER CONTAINS (?LABEL,"ONDERWIJSVELD")
-    FILTER (LANG(?LABEL) = "nl")
+    FILTER CONTAINS (?_label,"ONDERWIJSVELD")
+    FILTER (LANG(?_label) = "nl")
   }
 } LIMIT 10000 
