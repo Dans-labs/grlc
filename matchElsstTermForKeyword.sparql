@@ -13,7 +13,7 @@ SELECT ?iri
   {?iri ?y ?lbl .
     
 
-    FILTER CONTAINS (lcase(?lbl),lcase(str(?_label_nl)))
+    FILTER CONTAINS (?lbl,?_label_nl)
     FILTER (LANG(?lbl) = "nl")
   }
 } LIMIT 1
