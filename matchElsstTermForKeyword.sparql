@@ -12,7 +12,7 @@ SELECT ?iri
   GRAPH <https://thesauri.cessda.eu/elsst/>
   {?iri ?y ?lbl .
     
-    FILTER (regex(?lbl, '^?_label_nl$')) 
+    FILTER STR(?lbl) = STR(?_label_nl$) 
     FILTER (LANG(?lbl) = "nl")
   }
 } LIMIT 1
