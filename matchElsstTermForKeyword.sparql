@@ -6,13 +6,13 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?iri ?_label
+SELECT ?iri ?_label_nl
 
  WHERE {
   GRAPH <https://thesauri.cessda.eu/elsst/>
-  {?iri ?y ?_label .
+  {?iri ?y ?_label_nl .
     
-    FILTER CONTAINS (?_label,"ONDERWIJSVELD")
-    FILTER (LANG(?_label) = "nl")
+    FILTER CONTAINS (?_label_nl,"ONDERWIJSVELD")
+    FILTER (LANG(?_label_nl) = "nl")
   }
 } LIMIT 10000 
