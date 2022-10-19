@@ -13,7 +13,7 @@ SELECT ?iri
   {?iri ?y ?lbl .
     
 
-    FILTER ?lbl = str(?_label_nl
+    FILTER ?lbl = str(?_label_nl)
     FILTER (LANG(?lbl) = "nl")
   }
 } LIMIT 1
