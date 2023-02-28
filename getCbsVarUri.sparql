@@ -5,17 +5,16 @@
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX cbsVar: <https://portal.odissei-data.nl/data/cbs/variables/>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
 
-
-SELECT ?iri ?altLabel
+SELECT ?iri ?lbl
 
  WHERE {
- ?iri cbsVar:abbreviatedNameVariable ?lbl .
- ?iri skos:altLabel ?altLabel .
+  GRAPH <https://cbs.nl/variables/>
+  {?iri skos:altLabel ?lbl .
     
     FILTER sameTerm(lcase(?lbl),lcase(?_label_nl)) 
     FILTER langMatches( lang(?lbl), "NL" ) 
    
- } LIMIT 1
+  }
+} LIMIT 3
