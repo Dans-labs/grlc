@@ -16,5 +16,4 @@ SELECT ?iri
     FILTER sameTerm(lcase(?lbl),lcase(?_label_nl)) 
     FILTER langMatches( lang(?lbl), "NL" ) 
    
-  }
-} LIMIT 3
+ } LIMIT 3
