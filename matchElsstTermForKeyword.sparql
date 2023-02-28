@@ -6,11 +6,11 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?iri
+SELECT ?iri, ?lbl
 
  WHERE {
   GRAPH <https://thesauri.cessda.eu/elsst/>
-  {?iri ?y ?lbl .
+  {?iri ?p ?lbl .
     
     FILTER sameTerm(lcase(?lbl),lcase(?_label_nl)) 
     FILTER langMatches( lang(?lbl), "NL" ) 
