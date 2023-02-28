@@ -16,4 +16,4 @@ SELECT ?iri ?lbl
     FILTER langMatches( lang(?lbl), "NL" ) 
    
   }
-} LIMIT 1
+} LIMIT 3
