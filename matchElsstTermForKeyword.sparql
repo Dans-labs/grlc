@@ -12,7 +12,7 @@ SELECT ?iri ?lbl
   GRAPH <https://thesauri.cessda.eu/elsst/>
   {?iri ?p ?lbl .
     
-    FILTER sameTerm(lcase(?lbl),lcase(?_label_nl)) 
+    FILTER contains(lcase(?lbl),lcase(?_label_nl)) 
     FILTER langMatches( lang(?lbl), "NL" ) 
    
   }
