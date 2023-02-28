@@ -1,0 +1,20 @@
+#+ endpoint: https://graphdb.odissei.nl/repositories/margheritatest
+#+ defaults:
+#+   - label: OMZETPS213110113
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cbsVar: <https://portal.odissei-data.nl/data/cbs/variables/>
+
+
+SELECT ?iri
+
+ WHERE {
+ ?iri cbsVar:abbreviatedNameVariable ?lbl .
+    
+    FILTER sameTerm(lcase(?lbl),lcase(?_label_nl)) 
+    FILTER langMatches( lang(?lbl), "NL" ) 
+   
+  }
+} LIMIT 3
