@@ -13,7 +13,7 @@ SELECT ?iri ?lbl
   GRAPH <https://thesauri.cessda.eu/elsst/>
   {?iri skos:prefLabel ?lbl .
     
-    FILTER contains(lcase(?lbl),lcase(?_label_nl)) 
+    FILTER sameTerm(lcase(?lbl),lcase(?_label_nl)) 
     FILTER langMatches( lang(?lbl), "NL" ) 
    
   }
