@@ -1,4 +1,4 @@
-#+ endpoint: https://graphdb.odissei.nl/repositories/margheritatest
+#+ endpoint: https://fuseki.dev.odissei.nl/skosmos/sparql
 #+ defaults:
 #+   - label: OMZETPS213110113
 
